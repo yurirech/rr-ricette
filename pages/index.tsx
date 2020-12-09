@@ -61,7 +61,7 @@ export default function Home() {
 					<div className={styles.latestRecipes}>
 						<div className={`${styles.item} ${styles.item1}`}>
 							<RecipeCard
-								title="Pollo al vento"
+								title="Pancake dolce"
 								time="20"
 								calories="115"
 								image="/img/dolce.jpg"
@@ -69,7 +69,7 @@ export default function Home() {
 						</div>
 						<div className={`${styles.item} ${styles.item2}`}>
 							<RecipeCard
-								title="Pollo al vento"
+								title="Risotto del mare"
 								time="20"
 								calories="115"
 								image="/img/salate.jpg"
@@ -77,26 +77,26 @@ export default function Home() {
 						</div> 
 						<div className={`${styles.item} ${styles.item3}`}>
 							<RecipeCard
-								title="Pollo al vento"
+								title="Insalata di Ceci"
 								time="20"
 								calories="115"
-								image="/img/dolce.jpg"
+								image="/img/sane.jpg"
 							/>
 						</div>
 						<div className={`${styles.item} ${styles.item4}`}>
 							<RecipeCard
-								title="Pollo al vento"
+								title="Riso con vegetalli"
 								time="20"
 								calories="115"
-								image="/img/dolce.jpg"
+								image="/img/hero-1.jpg"
 							/>
 						</div>
 						<div className={`${styles.item} ${styles.item5}`}>
 							<RecipeCard
-								title="Pollo al vento"
+								title="Aperitivi"
 								time="20"
 								calories="115"
-								image="/img/dolce.jpg"
+								image="/img/tutte.jpg"
 							/>
 						</div>
 					</div>
