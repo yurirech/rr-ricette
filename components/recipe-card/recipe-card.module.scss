@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	
+	.imageHolder {
+		position: relative;
+		height: 100%;
+		// height: 5rem;
+	}
+
+	.cardBottom {
+		min-height: 7rem;
+		text-align: center;
+		background-color: $rr-item-background;
+		position: relative;
+		padding: 2rem 1rem 0.75rem;
+
+		h4 {
+			margin: 0;
+		}
+
+		.info {
+      display: flex;
+      justify-content: center;
+      
+      h5 {
+        color: $rr-black-text;
+        letter-spacing: 0;
+        margin: 0 .5rem;
+        font-size: 1.25rem;
+      }
+		}
+
+		.cookNow {
+			position: absolute;
+			top: -1.15rem;
+			padding: 0.5rem;
+			background-color: $rr-brand-color-2;
+			color: white;
+			font-weight: 600;
+			letter-spacing: -0.5px;
+			font-family: "Source Serif Pro", sans-serif;
+			width: 10rem;
+			right: 0;
+			left: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

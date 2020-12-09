@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import "../../styles/mixins";
 
 .menu {
   padding: .75rem 0;
@@ -8,6 +9,7 @@
   position: absolute;
   width: 100%;
   background-color: white;
+  z-index: 90;
 
   .container {
     display: flex;
@@ -55,9 +57,15 @@
     }
   }
 
+  .search, .login {
+    @include hideOnMobile;
+  }
+
   form {
     position: relative;
     text-align: end;
+    max-width: 50%;
+    margin-left: auto;
 
     input {
       height: 2rem;
@@ -67,6 +75,7 @@
       padding-top: 3px;
       font-size: .9rem;
       transition: 0.3s;
+      width: 100%;
 
       &:hover {
         border-bottom: 1px solid #0c0c0c70;
@@ -80,10 +89,28 @@
     .searchIcon {
       position: absolute;
       top: 16%;
-      left: 55%;
+      left: 0;
 
       svg:hover {
         fill: black !important;
+      }
+    }
+  }
+}
+
+
+@include laptopS {
+  .menu {
+    font-size: 80%;
+    .container {
+      flex-direction: column-reverse;
+
+      h4 {
+        font-size: 1.75rem;
+      }
+  
+      .brand {
+        width: 100%;
       }
     }
   }

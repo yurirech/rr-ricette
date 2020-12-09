@@ -1,7 +1,11 @@
+@import '../styles/variables';
+
 .container {
-  max-width: 1370px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .overlay {
@@ -10,4 +14,13 @@
   background-color: #0003;
   position: absolute;
   z-index: -1;
+}
+
+.divider {
+  height: 1px;
+  width: 70%;
+  background-color: rgba(128, 128, 128, 0.205);
+  display: block;
+  margin: 3.5rem auto 1rem;
+
 }

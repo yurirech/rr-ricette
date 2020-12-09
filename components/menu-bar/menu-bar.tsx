@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
+
 import Search from '../../public/icon/search.svg';
 import Login from '../../public/icon/login.svg';
 import Register from '../../public/icon/person_add.svg';
+
 import styles from './menu-bar.module.scss';
 import uStyles from '../../styles/utils.module.scss';
 
