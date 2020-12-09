@@ -4,8 +4,12 @@ import Image from 'next/image';
 import styles from './category-avatar.module.scss';
 import uStyles from '../../styles/utils.module.scss';
 
+interface CategoryAvatarProps {
+  title: string,
+  background: string
+}
 
-const CategoryAvatar = ({title, background}) => {
+const CategoryAvatar = ({title, background}: CategoryAvatarProps) => {
 
   return (
     <>
@@ -13,7 +17,7 @@ const CategoryAvatar = ({title, background}) => {
       <div className={styles.avatar}>
         <div className={uStyles.overlay}></div>
         <div className={styles.categoryBg}>
-          <Image src={background} objectFit='cover' width={150} height={150} />
+          <Image src={background} objectFit='cover'  layout='fill' />
         </div>
         <label>{title}</label>
       </div>

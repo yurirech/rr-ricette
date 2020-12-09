@@ -11,11 +11,14 @@
   overflow: hidden;
   cursor: pointer;
   margin: 1rem;
+  
 
   .categoryBg {
     position: absolute;
     z-index: -2;
     height: 100%;  
+    width: 100%;
+    transform: scale(1.5);
   }
 
   label {

@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+
+.footer {
+	text-align: center;
+	background-color: $rr-black-text;
+	padding: 1rem;
+  color: $rr-item-background;
+  // font-size: 80%;
+
+	p {
+		margin: 0.75rem;
+		font-weight: bold;
+
+		&:last-of-type {
+			margin-bottom: 1.75rem;
+		}
+	}
+
+	h4 {
+		margin: 1.25rem 0 0.75rem;
+	}
+
+	small {
+		padding-bottom: 1rem;
+	}
+}
+
+@import "../../styles/_mixins.scss";
+
+@include laptopS {
+	.footer {
+		margin-top: 9rem;
+	}
+}
