@@ -4,8 +4,8 @@ import style from "./recipe-card.module.scss";
 interface RecipeCard {
 	image?: string;
 	title: string;
-	time?: string;
-	calories?: string;
+	time?: number;
+	calories?: number;
 }
 
 const RecipeCard = ({ image, title, time, calories }: RecipeCard) => {

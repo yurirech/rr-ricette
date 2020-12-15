@@ -1,15 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
+
 import styles from "../styles/home.module.scss";
 import uStyles from "../styles/utils.module.scss";
 import Search from "../public/icon/search.svg";
+
 import Down from "../public/icon/south.svg";
 import MenuBar from "../components/menu-bar/menu-bar";
 import "animate.css";
+import { baseUrl, fetchQuery } from "../utils";
+
 import CategoryAvatar from "../components/category-avatar/category-avatar";
 import RecipeCard from "../components/recipe-card/recipe-card";
 
-export default function Home() {
+export default function Home({ recipes }) {
 	return (
 		<div>
 			<section className={styles.hero}>
@@ -38,7 +42,7 @@ export default function Home() {
 							fill="white"
 							className="animate__animated animate__shakeY animate__slow animate__repeat-2"
 						/>
-					</div> 
+					</div>
 				</div>
 			</section>
 			<section className={styles.typeOfFood}>
@@ -56,52 +60,34 @@ export default function Home() {
 			</section>
 			<section className={styles.homeRecipes}>
 				<div className={uStyles.container}>
-					{/* <h3>Scegli tra le ultime ricette aggiunte:</h3> */}
 					<h5>Oppure scegli tra le ultime aggiunte:</h5>
 					<div className={styles.latestRecipes}>
-						<div className={`${styles.item} ${styles.item1}`}>
-							<RecipeCard
-								title="Pancake dolce"
-								time="20"
-								calories="115"
-								image="/img/dolce.jpg"
-							/>
-						</div>
-						<div className={`${styles.item} ${styles.item2}`}>
-							<RecipeCard
-								title="Risotto del mare"
-								time="20"
-								calories="115"
-								image="/img/salate.jpg"
-							/>
-						</div> 
-						<div className={`${styles.item} ${styles.item3}`}>
-							<RecipeCard
-								title="Insalata di Ceci"
-								time="20"
-								calories="115"
-								image="/img/sane.jpg"
-							/>
-						</div>
-						<div className={`${styles.item} ${styles.item4}`}>
-							<RecipeCard
-								title="Riso con vegetalli"
-								time="20"
-								calories="115"
-								image="/img/hero-1.jpg"
-							/>
-						</div>
-						<div className={`${styles.item} ${styles.item5}`}>
-							<RecipeCard
-								title="Aperitivi"
-								time="20"
-								calories="115"
-								image="/img/tutte.jpg"
-							/>
-						</div>
+						{recipes.map((item: any, i: number) => (
+							<div
+								key={item.id}
+								className={`${styles.item} ${styles[`item${i + 1}`]}`}
+							>
+								<RecipeCard
+									title={item.title}
+									time={item.duration}
+									calories={item.calories}
+									image={`${baseUrl}${item.image.url}`}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</section>
 		</div>
 	);
+}
+
+export async function getStaticProps() {
+	const recipes = await fetchQuery("recipes");
+	return {
+		props: {
+			recipes,
+		},
+		revalidate: 1800,
+	};
 }
